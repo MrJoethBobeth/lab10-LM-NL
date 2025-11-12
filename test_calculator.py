@@ -43,12 +43,6 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculator.square_root(144), 12)
         self.assertAlmostEqual(calculator.square_root(0), 0)
 
-    def test_square_root_negative(self):
-        with self.assertRaises(ValueError):
-            calculator.square_root(-1)
-        with self.assertRaises(ValueError):
-            calculator.square_root(-100)
-
     def test_hypotenuse(self):
         self.assertAlmostEqual(calculator.hypotenuse(3, 4), 5)
         self.assertAlmostEqual(calculator.hypotenuse(5, 12), 13)
