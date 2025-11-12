@@ -1,3 +1,7 @@
+# https://github.com/MrJoethBobeth/lab10-LM-NL
+# Partner 1: Luis Malave Matias
+# Partner 2: Nathan Lohnes
+
 import math
 
 def square_root(a):
@@ -23,10 +27,11 @@ def div(a, b):
         raise ZeroDivisionError("Cannot divide by zero (a cannot be 0).")
     return b / a
 
-def log(a, b):
+def logarithim(a, b):
     if b <= 0:
         raise ValueError
     return math.log(b, a)
 
 def exp(a, b):
     return a ** b
+
