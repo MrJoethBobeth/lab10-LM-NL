@@ -28,10 +28,9 @@ def div(a, b):
     return b / a
 
 def logarithim(a, b):
-    if b <= 0:
+    if b <= 0 or a <= 0 or a == 1:
         raise ValueError
     return math.log(b, a)
 
 def exp(a, b):
     return a ** b
-
