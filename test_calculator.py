@@ -23,22 +23,22 @@ class TestCalculator(unittest.TestCase):
             calculator.div(0, 10)
 
     def test_logarithm(self):
-        self.assertAlmostEqual(calculator.logarithim(10, 100), 2)
-        self.assertAlmostEqual(calculator.logarithim(2, 8), 3)
+        self.assertAlmostEqual(calculator.logarithm(10, 100), 2)
+        self.assertAlmostEqual(calculator.logarithm(2, 8), 3)
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            calculator.logarithim(1, 100)
+            calculator.logarithm(1, 100)
         with self.assertRaises(ValueError):
-            calculator.logarithim(0, 100)
+            calculator.logarithm(0, 100)
         with self.assertRaises(ValueError):
-            calculator.logarithim(-2, 100)
+            calculator.logarithm(-2, 100)
         with self.assertRaises(ValueError):
-            calculator.logarithim(10, 0)
+            calculator.logarithm(10, 0)
         with self.assertRaises(ValueError):
-            calculator.logarithim(10, -10)
+            calculator.logarithm(10, -10)
 
-    def test_square_root(self):
+    def test_sqrt(self):
         self.assertAlmostEqual(calculator.square_root(9), 3)
         self.assertAlmostEqual(calculator.square_root(144), 12)
         self.assertAlmostEqual(calculator.square_root(0), 0)
@@ -53,5 +53,29 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculator.hypotenuse(3, 4), 5)
         self.assertAlmostEqual(calculator.hypotenuse(5, 12), 13)
 
+    def test_multiply(self):
+        self.assertAlmostEqual(calculator.mul(3, 3), 9)
+        self.assertAlmostEqual(calculator.mul(-2, 2), -4)
+        self.assertAlmostEqual(calculator.mul(-1, -20), 20)
+
+    def test_divide(self):
+        self.assertAlmostEqual(calculator.div(5, 1), 5)
+        self.assertAlmostEqual(calculator.div(-4, 2), -2)
+        self.assertAlmostEqual(calculator.div(-9, -3), 3)
+
+    def test_log_invalid_argument(self):
+        with self.assertRaises(ValueError):
+            calculator.logarithm(-1, 3)
+        with self.assertRaises(ValueError):
+            calculator.logarithm(0, 3)
+        with self.assertRaises(ValueError):
+            calculator.logarithm(1, 3)
+        with self.assertRaises(ValueError):
+            calculator.logarithm(10, 0)
+        with self.assertRaises(ValueError):
+            calculator.logarithm(10, -2)
+
+
+        
 if __name__ == '__main__':
     unittest.main()
